@@ -36,6 +36,9 @@ Follow these steps to get started with your secure backend:
 
 4. Access the API documentation and explore the available endpoints.
 
+### ___Security Configuration___
+<img src="https://github.com/Innocentsax/Spring-Security_6/blob/main/Security%20config%20view.png">
+
 ## Usage
 
 This backend template is designed to jumpstart your development process. Customize and expand upon it to suit your application's needs. Secure your endpoints, manage user access, and establish a reliable foundation for your project.
