@@ -2,7 +2,7 @@
 
 Build a robust and secure backend for your application with **Spring Security 6**. This project demonstrates how to create an authenticated backend using Spring Security, Spring Data JPA for database access, JWT generation for enhanced security, and harnessing capabilities through HTTP POST requests.
 
-### ___Token Generated @Postman___
+### ___Login Token Generated @Postman___
 <img src="https://github.com/Innocentsax/Spring-Security_6/blob/main/Postman%20test%20Login.png">
 
 ## Features
