@@ -24,7 +24,7 @@ Follow these steps to get started with your secure backend:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/secure-backend.git
+   git clone https://github.com/Innocentsax/Spring-Security_6.git
    ```
 
 2. Configure your database settings in `src/main/resources/application.properties`.
