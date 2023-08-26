@@ -15,6 +15,9 @@ Build a robust and secure backend for your application with **Spring Security 6*
 
 - **HTTP POST Capabilities**: Harness the power of HTTP POST requests to create, update, and manage resources. Empower your frontend to interact seamlessly with the backend.
 
+### ___Register user/admin @Postman___
+<img src="https://github.com/Innocentsax/Spring-Security_6/blob/main/Postman%20test%20register.png">
+
 ## Getting Started
 
 Follow these steps to get started with your secure backend:
