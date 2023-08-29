@@ -88,7 +88,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-By [Your Name](https://github.com/Innocentsax) | [Project Repository](https://github.com/your-username/mvc-security-java)
+By [Your Name](https://github.com/Innocentsax) | [Project Repository](https://github.com/Innocentsax/Spring-Security_6/edit/main/MVCSecuritySQ16)
 ```
 
 Remember to replace placeholders like `your-username`, `Your Name`, and update URLs to match your repository and profile information. Additionally, create `CONTRIBUTING.md` and `LICENSE` files if needed to provide contribution guidelines and specify the project's license.
