@@ -89,5 +89,4 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 By [INNOCENT UDO](https://github.com/Innocentsax) | [Project Repository](https://github.com/Innocentsax/Spring-Security_6/edit/main/MVCSecuritySQ16)
-```
 
