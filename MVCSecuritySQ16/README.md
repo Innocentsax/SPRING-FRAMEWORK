@@ -1,5 +1,7 @@
 # MVC Security Project in Java
 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI6K46AXXbhuAS8UAfFj0vqQd0tZoRrA4E9w&usqp=CAU">
+
 Welcome to the MVC Security Project in Java! This project showcases the implementation of a web application using the Model-View-Controller (MVC) architecture with a strong focus on security. It demonstrates various security measures to protect sensitive data and ensure a secure user experience.
 
 ## Table of Contents
