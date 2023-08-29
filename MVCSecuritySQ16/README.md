@@ -29,7 +29,7 @@ By implementing best practices for security, the project ensures the protection 
 - Secure session management
 - Input validation and sanitation
 - Two-factor authentication (2FA)
-- Secure communication over HTTPS
+- Secure communication over HTTPS.
 
 ## Prerequisites
 
