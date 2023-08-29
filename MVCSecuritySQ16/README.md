@@ -60,7 +60,9 @@ By implementing best practices for security, the project ensures the protection 
 
 ## Usage
 
-Once the project is deployed and running, you can access the web application through your browser. Follow the provided URLs to register, log in, and explore the secure features. Refer to the source code and documentation for insights into how different security measures are implemented.
+Once the project is deployed and running, you can access the web application through your browser. 
+Follow the provided URLs to register, log in, and explore the secure features. Refer to the source 
+code and documentation for insights into how different security measures are implemented.
 
 ## Security Measures
 
@@ -86,7 +88,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-By [Your Name](https://github.com/your-username) | [Project Repository](https://github.com/your-username/mvc-security-java)
+By [Your Name](https://github.com/Innocentsax) | [Project Repository](https://github.com/your-username/mvc-security-java)
 ```
 
 Remember to replace placeholders like `your-username`, `Your Name`, and update URLs to match your repository and profile information. Additionally, create `CONTRIBUTING.md` and `LICENSE` files if needed to provide contribution guidelines and specify the project's license.
