@@ -13,7 +13,7 @@ Build a robust and secure backend for your application with **Spring Security 6*
 
 - **JWT Generation**: Elevate security to the next level with JSON Web Token (JWT) generation. Ensure secure communication between your frontend and backend while minimizing potential vulnerabilities.
 
-- **HTTP POST Capabilities**: Harness the power of HTTP POST requests to create, update, and manage resources. Empower your frontend to interact seamlessly with the backend.
+- **HTTP POST Capabilities**: Harness the power of HTTP POST requests to create, update, and manage resources. Empower your frontend to interact seamlessly with the backend..
 
 ### ___Register user/admin @Postman___
 <img src="https://github.com/Innocentsax/Spring-Security_6/blob/main/Postman%20test%20register.png">
