@@ -1,6 +1,6 @@
 # SecureBackend - Authenticated API using Spring Security 6
 
-Build a robust and secure backend for your application with **Spring Security 6**. This project demonstrates how to create an authenticated backend using Spring Security, Spring Data JPA for database access, JWT generation for enhanced security, and harnessing capabilities through HTTP POST requests....
+Build a robust and secure backend for your application with **Spring Security 6**. This project demonstrates how to create an authenticated backend using Spring Security, Spring Data JPA for database access, JWT generation for enhanced security, and harnessing capabilities through HTTP POST requests.
 
 ### ___Login Token Generated @Postman___
 <img src="https://github.com/Innocentsax/Spring-Security_6/blob/main/Postman%20test%20Login.png">
