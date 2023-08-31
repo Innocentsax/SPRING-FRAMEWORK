@@ -49,7 +49,7 @@ For detailed documentation on endpoints, authentication, and more, refer to the 
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions, feel free to submit a pull request or open an issue.
+Contributions are welcome! If you find any issues or have suggestions, feel free to submit a pull request or open an issue..
 
 ## License
 
