@@ -7,7 +7,7 @@ Build a robust and secure backend for your application with **Spring Security 6*
 
 ## Features
 
-- **Spring Security 6**: Craft a fortified backend by leveraging the latest capabilities of Spring Security 6. Ensure that your application's data remains safeguarded with top-tier security measures.
+- **Spring Security 6**: Craft a fortified backend by leveraging the latest capabilities of Spring Security 6. Ensure that your application's data remains safeguarded with top-tier security measures..
 
 - **Spring Data JPA**: Seamlessly interact with your database through Spring Data JPA. Manage user data, roles, and more with the power of JPA-based repositories.
 
