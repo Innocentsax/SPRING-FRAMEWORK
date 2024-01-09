@@ -1,4 +1,4 @@
-# Spring, SpringBoot, JPA, Hibernate
+# Spring, SpringBoot, JPA, Hibernate.
 
 Build a robust and secure backend for your application with **Spring Security 6**. This repo demonstrates how to create an authenticated backend using Spring Security, Spring Data JPA for database access, JWT generation for enhanced security, and harnessing capabilities through HTTP POST requests.
 
