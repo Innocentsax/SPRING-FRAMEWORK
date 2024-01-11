@@ -19,5 +19,13 @@ public class ProjectConfig {
         veh.setName("Audi 8");
         return veh;
     }
+    @Bean
+    String hello(){
+        return "Hello World";
+    }
+    @Bean
+    Integer number(){
+        return 16;
+    }
 
 }
