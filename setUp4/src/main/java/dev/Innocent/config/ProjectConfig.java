@@ -3,6 +3,7 @@ package dev.Innocent.config;
 import dev.Innocent.beans.Vehicle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 /*
 Spring @Configuration annotation is part of the spring core framework.
@@ -33,7 +34,8 @@ value to the context.
         return veh;
     }
 
-    @Bean
+    @Primary
+    @Bean("Ferrari")
     Vehicle vehicle3(){
         var veh = new Vehicle();
         veh.setName("Ferrari");
