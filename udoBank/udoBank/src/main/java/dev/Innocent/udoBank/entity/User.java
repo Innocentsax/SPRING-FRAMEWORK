@@ -1,6 +1,8 @@
 package dev.Innocent.udoBank.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -14,7 +16,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(name = "users")
 public class User {
+    @Id
     private Long id;
     private String firstName;
     private String lastName;
