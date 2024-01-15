@@ -9,5 +9,4 @@ public class UdoBankApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UdoBankApplication.class, args);
 	}
-
 }
