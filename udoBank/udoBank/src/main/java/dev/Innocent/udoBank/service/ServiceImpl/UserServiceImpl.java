@@ -2,9 +2,11 @@ package dev.Innocent.udoBank.service.ServiceImpl;
 
 import dev.Innocent.udoBank.DTO.AccountInfo;
 import dev.Innocent.udoBank.DTO.BankResponse;
+import dev.Innocent.udoBank.DTO.EmailDetails;
 import dev.Innocent.udoBank.DTO.UserRequest;
 import dev.Innocent.udoBank.entity.User;
 import dev.Innocent.udoBank.repository.UserRepository;
+import dev.Innocent.udoBank.service.EmailService;
 import dev.Innocent.udoBank.service.UserService;
 import dev.Innocent.udoBank.utils.AccountUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +16,13 @@ import java.math.BigDecimal;
 @Service
 public class UserServiceImpl implements UserService {
     UserRepository userRepository;
-
+    EmailService emailService;
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, EmailService emailService) {
         this.userRepository = userRepository;
+        this.emailService = emailService;
     }
+
     @Override
     public BankResponse createAccount(UserRequest userRequest) {
         /**
@@ -37,6 +41,7 @@ public class UserServiceImpl implements UserService {
                 .lastName(userRequest.getLastName())
                 .otherName(userRequest.getOtherName())
                 .gender(userRequest.getGender())
+                .address(userRequest.getAddress())
                 .stateOfOrigin(userRequest.getStateOfOrigin())
                 .accountNumber(AccountUtils.generateAccountNumber())
                 .accountBalance(BigDecimal.ZERO)
@@ -46,6 +51,15 @@ public class UserServiceImpl implements UserService {
                 .status("ACTIVE")
                 .build();
         User savedUser = userRepository.save(newUser);
+        //Send email Alert
+        EmailDetails emailDetails = EmailDetails.builder()
+                .recipient(savedUser.getEmail())
+                .subject("ACCOUNT CREATION")
+                .messageBody("Congratulation! Your account has been successfully created.\nYour Account Details:" +
+                        "\nAccount name: " + savedUser.getFirstName() + " " + savedUser.getLastName() + " " +
+                        savedUser.getOtherName() + "\nAccount Number: " + savedUser.getAccountNumber())
+                .build();
+        emailService.sendEmailAlert(emailDetails);
         return BankResponse.builder()
                 .responseCode(AccountUtils.ACCOUNT_CREATION_SUCCESS)
                 .responseMessage(AccountUtils.ACCOUNT_CREATION_MESSAGE)
