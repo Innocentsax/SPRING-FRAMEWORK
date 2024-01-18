@@ -1,6 +1,7 @@
 package dev.Innocent.udoBank.controller;
 
 import dev.Innocent.udoBank.DTO.BankResponse;
+import dev.Innocent.udoBank.DTO.CreditDebitRequest;
 import dev.Innocent.udoBank.DTO.EnquiryRequest;
 import dev.Innocent.udoBank.DTO.UserRequest;
 import dev.Innocent.udoBank.service.UserService;
@@ -23,9 +24,12 @@ public class UserController {
     public BankResponse createAccount(@RequestBody EnquiryRequest request){
         return userService.balanceEnquiry(request);
     }
-
     @GetMapping("/nameEnquiry")
     public String nameEnquiry(@RequestBody EnquiryRequest request){
         return userService.nameEnquiry(request);
+    }
+    @PostMapping("/credit")
+    public BankResponse creditAccount(@RequestBody CreditDebitRequest request){
+        return userService.creditAccount(request);
     }
 }
