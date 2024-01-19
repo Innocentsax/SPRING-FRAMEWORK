@@ -1,9 +1,6 @@
 package dev.Innocent.udoBank.service;
 
-import dev.Innocent.udoBank.DTO.BankResponse;
-import dev.Innocent.udoBank.DTO.CreditDebitRequest;
-import dev.Innocent.udoBank.DTO.EnquiryRequest;
-import dev.Innocent.udoBank.DTO.UserRequest;
+import dev.Innocent.udoBank.DTO.*;
 
 public interface UserService {
     BankResponse createAccount(UserRequest userRequest);
@@ -11,4 +8,5 @@ public interface UserService {
     String nameEnquiry(EnquiryRequest enquiryRequest);
     BankResponse creditAccount(CreditDebitRequest request);
     BankResponse debitAccount(CreditDebitRequest request);
+    BankResponse transfer(TransferRequest request);
 }
