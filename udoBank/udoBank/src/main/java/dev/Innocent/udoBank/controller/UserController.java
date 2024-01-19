@@ -1,9 +1,6 @@
 package dev.Innocent.udoBank.controller;
 
-import dev.Innocent.udoBank.DTO.BankResponse;
-import dev.Innocent.udoBank.DTO.CreditDebitRequest;
-import dev.Innocent.udoBank.DTO.EnquiryRequest;
-import dev.Innocent.udoBank.DTO.UserRequest;
+import dev.Innocent.udoBank.DTO.*;
 import dev.Innocent.udoBank.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,5 +32,9 @@ public class UserController {
     @PostMapping("/debit")
     public BankResponse debitAccount(@RequestBody CreditDebitRequest request){
         return userService.debitAccount(request);
+    }
+    @PostMapping("/transfer")
+    public BankResponse transfer(@RequestBody TransferRequest request){
+        return userService.transfer(request);
     }
 }
