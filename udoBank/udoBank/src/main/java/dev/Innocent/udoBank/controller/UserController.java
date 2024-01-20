@@ -30,6 +30,14 @@ public class UserController {
     public BankResponse createAccount(@RequestBody UserRequest userRequest){
         return userService.createAccount(userRequest);
     }
+    @Operation(
+            summary = "Balance Enquiry",
+            description = "Given an account number, check how much the user has"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "Http Status 201 SUCCESS"
+    )
     @GetMapping("/balanceEnquiry")
     public BankResponse createAccount(@RequestBody EnquiryRequest request){
         return userService.balanceEnquiry(request);
