@@ -2,6 +2,8 @@ package dev.Innocent.udoBank.controller;
 
 import dev.Innocent.udoBank.DTO.*;
 import dev.Innocent.udoBank.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,15 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
+    @Operation(
+            summary = "create new user Account",
+            description = "Creating a new user and assigning an account ID"
+    )
+    @ApiResponse(
+            responseCode = "201",
+            description = "Http Status 201 CREATED"
+    )
     @PostMapping
     public BankResponse createAccount(@RequestBody UserRequest userRequest){
         return userService.createAccount(userRequest);
