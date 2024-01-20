@@ -4,22 +4,27 @@ import dev.Innocent.udoBank.DTO.*;
 import dev.Innocent.udoBank.entity.User;
 import dev.Innocent.udoBank.repository.UserRepository;
 import dev.Innocent.udoBank.service.EmailService;
+import dev.Innocent.udoBank.service.TransactionService;
 import dev.Innocent.udoBank.service.UserService;
 import dev.Innocent.udoBank.utils.AccountUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-@Service
+@Component
 public class UserServiceImpl implements UserService {
     UserRepository userRepository;
     EmailService emailService;
+    TransactionService transactionService;
+
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, EmailService emailService) {
+    public UserServiceImpl(UserRepository userRepository, EmailService emailService,
+                           TransactionService transactionService) {
         this.userRepository = userRepository;
         this.emailService = emailService;
+        this.transactionService = transactionService;
     }
 
     @Override
@@ -117,6 +122,15 @@ public class UserServiceImpl implements UserService {
         User userToCredit = userRepository.findByAccountNumber(request.getAccountNumber());
         userToCredit.setAccountBalance(userToCredit.getAccountBalance().add(request.getAmount()));
         userRepository.save(userToCredit);
+
+        // Save Transaction
+        TransactionDTO transactionDTO = TransactionDTO.builder()
+                .accountNumber(userToCredit.getAccountNumber())
+                .transactionType("CREDIT")
+                .amount(request.getAmount())
+                .build();
+        transactionService.saveTransaction(transactionDTO);
+
         return BankResponse.builder()
                 .responseCode(AccountUtils.ACCOUNT_CREDITED_SUCCESS)
                 .responseMessage(AccountUtils.ACCOUNT_CREDITED_SUCCESS_MESSAGE)
@@ -153,6 +167,15 @@ public class UserServiceImpl implements UserService {
         else{
             userToDebit.setAccountBalance(userToDebit.getAccountBalance().subtract(request.getAmount()));
             userRepository.save(userToDebit);
+
+            // Save Transaction
+            TransactionDTO transactionDTO = TransactionDTO.builder()
+                    .accountNumber(userToDebit.getAccountNumber())
+                    .transactionType("DEBIT")
+                    .amount(request.getAmount())
+                    .build();
+            transactionService.saveTransaction(transactionDTO);
+
             return BankResponse.builder()
                     .responseCode(AccountUtils.ACCOUNT_DEBITED_SUCCESS)
                     .responseMessage(AccountUtils.ACCOUNT_DEBITED_MESSAGE)
@@ -211,6 +234,14 @@ public class UserServiceImpl implements UserService {
                 .messageBody("The sum of " + request.getAmount() + " has been sent to your account, from " + sourceUsername +"! Your current balance is " + destinationAccountUser.getAccountNumber())
                 .build();
         emailService.sendEmailAlert(creditAlert);
+
+        // Save Transaction
+        TransactionDTO transactionDTO = TransactionDTO.builder()
+                .accountNumber(destinationAccountUser.getAccountNumber())
+                .transactionType("DEBIT")
+                .amount(request.getAmount())
+                .build();
+        transactionService.saveTransaction(transactionDTO);
 
         return BankResponse.builder()
                 .responseCode(AccountUtils.TRANSFER_SUCCESSFUL_CODE)
