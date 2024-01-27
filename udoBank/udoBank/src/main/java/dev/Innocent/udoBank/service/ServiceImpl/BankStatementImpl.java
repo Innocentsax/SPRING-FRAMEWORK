@@ -1,8 +1,10 @@
 package dev.Innocent.udoBank.service.ServiceImpl;
 
 import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.PdfWriter;
 import dev.Innocent.udoBank.entity.Transaction;
 import dev.Innocent.udoBank.repository.TransactionRepository;
 import lombok.AllArgsConstructor;
@@ -36,11 +38,11 @@ public class BankStatementImpl {
         return transactionList;
     }
 
-    private void designStatement(List<Transaction> transactions) throws FileNotFoundException {
+    private void designStatement(List<Transaction> transactions) throws FileNotFoundException, DocumentException {
         Rectangle statementSize = new Rectangle(PageSize.A4);
         Document document = new Document(statementSize);
         log.info("Setting size of document");
         OutputStream outputStream = new FileOutputStream(FILE);
-
+        PdfWriter.getInstance(document, outputStream);
     }
 }
