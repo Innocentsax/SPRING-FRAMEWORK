@@ -1,8 +1,12 @@
 package dev.Innocent.udoBank.service.ServiceImpl;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Rectangle;
 import dev.Innocent.udoBank.entity.Transaction;
 import dev.Innocent.udoBank.repository.TransactionRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -11,6 +15,7 @@ import java.util.List;
 
 @Component
 @AllArgsConstructor
+@Slf4j
 public class BankStatementImpl {
     private TransactionRepository transactionRepository;
     private static final String FILE = "C:\\Users\\Innocent Udo\\MyStatement.pdf";
@@ -28,5 +33,8 @@ public class BankStatementImpl {
         return transactionList;
     }
 
-
+    private void designStatement(List<Transaction> transactions){
+        Rectangle statementSize = new Rectangle(PageSize.A4);
+        Document document = new Document(statementSize);
+    }
 }
