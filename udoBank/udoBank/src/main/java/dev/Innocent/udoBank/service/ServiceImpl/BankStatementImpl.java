@@ -5,7 +5,9 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import dev.Innocent.udoBank.entity.Transaction;
+import dev.Innocent.udoBank.entity.User;
 import dev.Innocent.udoBank.repository.TransactionRepository;
+import dev.Innocent.udoBank.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -24,6 +26,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class BankStatementImpl {
     private TransactionRepository transactionRepository;
+    private UserRepository userRepository;
     private static final String FILE = "C:\\Users\\Innocent Udo\\MyStatement.pdf";
     /**
      * Retrieve list of transactions within a date range given an account number
@@ -50,7 +53,8 @@ public class BankStatementImpl {
                     return createdAt != null && createdAt.toLocalDate().isAfter(start.minusDays(1)) && createdAt.toLocalDate().isBefore(end);
                 })
                 .collect(Collectors.toList());
-
+        User user = userRepository.findByAccountNumber(accountNumber);
+        String customerName = user.getFirstName() + " " + user.getLastName() + " " + user.getOtherName();
         Rectangle statementSize = new Rectangle(PageSize.A4);
         Document document = new Document(statementSize);
         log.info("Setting size of document");
@@ -68,6 +72,14 @@ public class BankStatementImpl {
         bankAddress.setBorder(0);
         bankInfoTable.addCell(bankName);
         bankInfoTable.addCell(bankAddress);
+
+        PdfPTable statementInfo = new PdfPTable(2);
+        PdfPCell customerInfo = new PdfPCell(new Phrase("Start Date: " + startDate));
+        customerInfo.setBorder(0);
+        PdfPCell statement = new PdfPCell(new Phrase("STATEMENT OF ACCOUNT"));
+        statement.setBorder(0);
+        PdfPCell stopDate = new PdfPCell(new Phrase("End Date: " + endDate));
+        stopDate.setBorder(0);
 
         return transactionList;
     }
