@@ -9,6 +9,9 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -33,8 +36,11 @@ public class BankStatementImpl {
         return transactionList;
     }
 
-    private void designStatement(List<Transaction> transactions){
+    private void designStatement(List<Transaction> transactions) throws FileNotFoundException {
         Rectangle statementSize = new Rectangle(PageSize.A4);
         Document document = new Document(statementSize);
+        log.info("Setting size of document");
+        OutputStream outputStream = new FileOutputStream(FILE);
+
     }
 }
