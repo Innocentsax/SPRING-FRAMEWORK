@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BankStatementImpl {
     private TransactionRepository transactionRepository;
+    private static final String FILE = "C:\\Users\\Innocent Udo\\MyStatement.pdf";
     /**
      * Retrieve list of transactions within a date range given an account number
      * Generate a pdf file of transactions
@@ -26,4 +27,6 @@ public class BankStatementImpl {
                 transaction.getCreatedAt().isEqual(start.atStartOfDay())).filter((transaction -> transaction.getCreatedAt().isEqual(end.atStartOfDay()))).toList();
         return transactionList;
     }
+
+
 }
