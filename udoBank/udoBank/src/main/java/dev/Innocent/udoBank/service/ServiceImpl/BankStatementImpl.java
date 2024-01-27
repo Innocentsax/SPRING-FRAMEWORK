@@ -67,5 +67,10 @@ public class BankStatementImpl {
         bankName.setBorder(0);
         bankName.setBackgroundColor(BaseColor.BLUE);
         bankName.setPadding(20f);
+
+        PdfPCell bankAddress = new PdfPCell(new Phrase("7 Olayinka road, Mainland Lagos"));
+        bankAddress.setBorder(0);
+        bankInfoTable.addCell(bankName);
+        bankInfoTable.addCell(bankAddress);
     }
 }
