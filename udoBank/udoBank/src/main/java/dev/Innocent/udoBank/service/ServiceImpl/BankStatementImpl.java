@@ -1,9 +1,8 @@
 package dev.Innocent.udoBank.service.ServiceImpl;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import dev.Innocent.udoBank.entity.Transaction;
 import dev.Innocent.udoBank.repository.TransactionRepository;
@@ -61,5 +60,12 @@ public class BankStatementImpl {
         log.info("Setting size of document");
         OutputStream outputStream = new FileOutputStream(FILE);
         PdfWriter.getInstance(document, outputStream);
+        document.open();
+
+        PdfPTable bankInfoTable = new PdfPTable(1);
+        PdfPCell bankName  = new PdfPCell(new Phrase("Zenith Bank"));
+        bankName.setBorder(0);
+        bankName.setBackgroundColor(BaseColor.BLUE);
+        bankName.setPadding(20f);
     }
 }
