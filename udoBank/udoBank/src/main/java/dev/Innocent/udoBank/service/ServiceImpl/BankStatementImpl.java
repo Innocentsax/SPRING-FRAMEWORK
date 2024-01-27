@@ -80,7 +80,9 @@ public class BankStatementImpl {
         statement.setBorder(0);
         PdfPCell stopDate = new PdfPCell(new Phrase("End Date: " + endDate));
         stopDate.setBorder(0);
-
+        PdfPCell name = new PdfPCell(new Phrase("Customer Name: " + customerName));
+        name.setBorder(0);
+        PdfPCell space = new PdfPCell();
 
         return transactionList;
     }
