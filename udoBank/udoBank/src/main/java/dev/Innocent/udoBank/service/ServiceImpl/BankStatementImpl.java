@@ -39,7 +39,7 @@ public class BankStatementImpl {
 //        return transactionList;
 //    }
 
-    public List<Transaction> generateStatement(String accountNumber, String startDate, String endDate) {
+    public List<Transaction> generateStatement(String accountNumber, String startDate, String endDate) throws DocumentException, FileNotFoundException {
         LocalDate start = LocalDate.parse(startDate, DateTimeFormatter.ISO_DATE);
         LocalDate end = LocalDate.parse(endDate, DateTimeFormatter.ISO_DATE).plusDays(1); // Include transactions on the end date
 
@@ -51,10 +51,6 @@ public class BankStatementImpl {
                 })
                 .collect(Collectors.toList());
 
-        return transactionList;
-    }
-
-    private void designStatement(List<Transaction> transactions) throws FileNotFoundException, DocumentException {
         Rectangle statementSize = new Rectangle(PageSize.A4);
         Document document = new Document(statementSize);
         log.info("Setting size of document");
@@ -72,5 +68,27 @@ public class BankStatementImpl {
         bankAddress.setBorder(0);
         bankInfoTable.addCell(bankName);
         bankInfoTable.addCell(bankAddress);
+
+        return transactionList;
     }
+
+//    private void designStatement(List<Transaction> transactions) throws FileNotFoundException, DocumentException {
+//        Rectangle statementSize = new Rectangle(PageSize.A4);
+//        Document document = new Document(statementSize);
+//        log.info("Setting size of document");
+//        OutputStream outputStream = new FileOutputStream(FILE);
+//        PdfWriter.getInstance(document, outputStream);
+//        document.open();
+//
+//        PdfPTable bankInfoTable = new PdfPTable(1);
+//        PdfPCell bankName  = new PdfPCell(new Phrase("Zenith Bank"));
+//        bankName.setBorder(0);
+//        bankName.setBackgroundColor(BaseColor.BLUE);
+//        bankName.setPadding(20f);
+//
+//        PdfPCell bankAddress = new PdfPCell(new Phrase("7 Olayinka road, Mainland Lagos"));
+//        bankAddress.setBorder(0);
+//        bankInfoTable.addCell(bankName);
+//        bankInfoTable.addCell(bankAddress);
+//    }
 }
