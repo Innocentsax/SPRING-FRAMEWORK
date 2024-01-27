@@ -81,6 +81,7 @@ public class BankStatementImpl {
         PdfPCell stopDate = new PdfPCell(new Phrase("End Date: " + endDate));
         stopDate.setBorder(0);
 
+
         return transactionList;
     }
 
