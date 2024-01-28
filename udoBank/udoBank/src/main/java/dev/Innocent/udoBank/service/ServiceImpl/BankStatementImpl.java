@@ -83,6 +83,9 @@ public class BankStatementImpl {
         PdfPCell name = new PdfPCell(new Phrase("Customer Name: " + customerName));
         name.setBorder(0);
         PdfPCell space = new PdfPCell();
+        space.setBorder(0);
+        PdfPCell address = new PdfPCell(new Phrase("Customer Address " + user.getAddress()));
+        address.setBorder(0);
 
         return transactionList;
     }
