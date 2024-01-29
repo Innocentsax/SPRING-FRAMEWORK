@@ -124,6 +124,8 @@ public class BankStatementImpl {
         document.add(statementInfo);
         document.add(transactionsTable);
 
+        document.close();
+
         return transactionList;
     }
 }
