@@ -87,6 +87,16 @@ public class BankStatementImpl {
         PdfPCell address = new PdfPCell(new Phrase("Customer Address " + user.getAddress()));
         address.setBorder(0);
 
+        PdfPTable transactionsTable = new PdfPTable(4);
+        PdfPCell date = new PdfPCell(new Phrase("DATE"));
+        date.setBackgroundColor(BaseColor.BLUE);
+        date.setBorder(0);
+        PdfPCell transactionType = new PdfPCell(new Phrase("TRANSACTION TYPE"));
+        transactionType.setBackgroundColor(BaseColor.BLUE);
+        transactionType.setBorder(0);
+        PdfPCell transactionAmount = new PdfPCell(new Phrase("TRANSACTION AMOUNT"));
+
+
         return transactionList;
     }
 }
