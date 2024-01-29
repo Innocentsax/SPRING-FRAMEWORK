@@ -4,10 +4,12 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import dev.Innocent.udoBank.DTO.EmailDetails;
 import dev.Innocent.udoBank.entity.Transaction;
 import dev.Innocent.udoBank.entity.User;
 import dev.Innocent.udoBank.repository.TransactionRepository;
 import dev.Innocent.udoBank.repository.UserRepository;
+import dev.Innocent.udoBank.service.EmailService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -27,6 +29,7 @@ import java.util.stream.Collectors;
 public class BankStatementImpl {
     private TransactionRepository transactionRepository;
     private UserRepository userRepository;
+    private EmailService emailService;
     private static final String FILE = "C:\\Users\\Innocent Udo\\MyStatement.pdf";
     /**
      * Retrieve list of transactions within a date range given an account number
@@ -125,6 +128,14 @@ public class BankStatementImpl {
         document.add(transactionsTable);
 
         document.close();
+
+        EmailDetails emailDetails = EmailDetails.builder()
+                .recipient(user.getEmail())
+                .subject("STATEMENT OF ACCOUNT")
+                .messageBody("Kindly find your requested account statement attached!")
+                .attachment(FILE)
+                .build();
+        emailService.sendEmailWithAttachment(emailDetails);
 
         return transactionList;
     }
