@@ -95,7 +95,8 @@ public class BankStatementImpl {
         transactionType.setBackgroundColor(BaseColor.BLUE);
         transactionType.setBorder(0);
         PdfPCell transactionAmount = new PdfPCell(new Phrase("TRANSACTION AMOUNT"));
-
+        transactionAmount.setBackgroundColor(BaseColor.BLUE);
+        transactionAmount.setBorder(0);
 
         return transactionList;
     }
