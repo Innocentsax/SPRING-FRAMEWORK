@@ -44,6 +44,10 @@ public class EmailServiceImpl implements EmailService {
         MimeMessageHelper mimeMessageHelper;
         try{
             mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
+            mimeMessageHelper.setFrom(senderEmail);
+            mimeMessageHelper.setTo(emailDetails.getRecipient());
+            mimeMessageHelper.setText(emailDetails.getMessageBody());
+            mimeMessageHelper.setSubject(emailDetails.getSubject());
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
