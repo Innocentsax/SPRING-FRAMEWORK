@@ -101,6 +101,11 @@ public class BankStatementImpl {
         status.setBackgroundColor(BaseColor.BLUE);
         status.setBorder(0);
 
+        transactionsTable.addCell(date);
+        transactionsTable.addCell(transactionType);
+        transactionsTable.addCell(transactionAmount);
+        transactionsTable.addCell(status);
+
         transactionList.forEach(transaction -> {
             transactionsTable.addCell(new Phrase(transaction.getCreatedAt().toString()));
             transactionsTable.addCell(new Phrase(transaction.getTransactionType()));
