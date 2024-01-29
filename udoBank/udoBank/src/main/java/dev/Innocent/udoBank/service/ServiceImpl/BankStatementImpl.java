@@ -108,6 +108,13 @@ public class BankStatementImpl {
             transactionsTable.addCell(new Phrase(transaction.getStatus()));
         });
 
+        statementInfo.addCell(customerInfo);
+        statementInfo.addCell(statement);
+        statementInfo.addCell(endDate);
+        statementInfo.addCell(name);
+        statementInfo.addCell(space);
+        statementInfo.addCell(address);
+
         return transactionList;
     }
 }
