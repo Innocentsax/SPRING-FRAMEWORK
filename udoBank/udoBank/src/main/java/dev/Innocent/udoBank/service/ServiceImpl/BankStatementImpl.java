@@ -120,6 +120,10 @@ public class BankStatementImpl {
         statementInfo.addCell(space);
         statementInfo.addCell(address);
 
+        document.add(bankInfoTable);
+        document.add(statementInfo);
+        document.add(transactionsTable);
+
         return transactionList;
     }
 }
