@@ -8,6 +8,7 @@ import dev.Innocent.udoBank.service.TransactionService;
 import dev.Innocent.udoBank.service.UserService;
 import dev.Innocent.udoBank.utils.AccountUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -18,13 +19,15 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
     EmailService emailService;
     TransactionService transactionService;
-
+    PasswordEncoder passwordEncoder;
     @Autowired
     public UserServiceImpl(UserRepository userRepository, EmailService emailService,
-                           TransactionService transactionService) {
+                           TransactionService transactionService,
+                           PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.emailService = emailService;
         this.transactionService = transactionService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
