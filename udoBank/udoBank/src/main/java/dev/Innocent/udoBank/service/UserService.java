@@ -9,4 +9,5 @@ public interface UserService {
     BankResponse creditAccount(CreditDebitRequest request);
     BankResponse debitAccount(CreditDebitRequest request);
     BankResponse transfer(TransferRequest request);
+    BankResponse login(LoginDTO loginDTO);
 }
