@@ -58,4 +58,8 @@ public class UserController {
     public BankResponse transfer(@RequestBody TransferRequest request){
         return userService.transfer(request);
     }
+
+    public BankResponse login(@RequestBody LoginDTO loginDTO){
+        return userService.login(loginDTO);
+    }
 }
