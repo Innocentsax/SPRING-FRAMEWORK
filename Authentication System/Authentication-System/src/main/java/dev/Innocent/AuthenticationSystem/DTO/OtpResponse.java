@@ -9,9 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Request {
-    private String email;
-    private String password;
-    private String firstName;
-    private String lastName;
+public class OtpResponse {
+    private Boolean isOtpValid;
 }

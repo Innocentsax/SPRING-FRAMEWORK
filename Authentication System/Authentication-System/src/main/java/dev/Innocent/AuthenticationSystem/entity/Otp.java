@@ -1,29 +1,27 @@
 package dev.Innocent.AuthenticationSystem.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Getter
-@Setter
 @Builder
-@Table(name = "users")
-public class User {
+@Entity
+public class Otp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String otp;
     private String email;
-    private String firstName;
-    private String lastName;
-    private String password;
     @CreationTimestamp
     private LocalDateTime createdAt;
-    @UpdateTimestamp
-    private LocalDateTime modifiedAt;
+    private LocalDateTime expiresAt;
 }
