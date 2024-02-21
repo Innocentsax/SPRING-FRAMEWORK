@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<div>
+    <h1>Welcome</h1>
+    <div sec:authorize="isAuthenticated()">
+        <p sec:authentication="principal"></p>
+    </div>
+</div>
+</body>
+</html>
