@@ -9,5 +9,4 @@ public class GoogleLoginApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GoogleLoginApplication.class, args);
 	}
-
 }
