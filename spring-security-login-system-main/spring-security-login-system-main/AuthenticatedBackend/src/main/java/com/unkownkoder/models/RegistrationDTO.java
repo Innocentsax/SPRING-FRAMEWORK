@@ -1,4 +1,4 @@
-package dev.Innocent.DTO;
+package com.unkownkoder.models;
 
 public class RegistrationDTO {
     private String username;

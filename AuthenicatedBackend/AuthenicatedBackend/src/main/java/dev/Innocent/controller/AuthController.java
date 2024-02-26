@@ -1,5 +1,6 @@
 package dev.Innocent.controller;
 
+import dev.Innocent.DTO.LoginResponseDTO;
 import dev.Innocent.DTO.RegistrationDTO;
 import dev.Innocent.models.AppUser;
 import dev.Innocent.service.AuthenticationService;
@@ -16,5 +17,10 @@ public class AuthController {
     @PostMapping("/register")
     public AppUser registerUser(@RequestBody RegistrationDTO body){
         return authenticationService.registerUser(body.getUsername(), body.getPassword());
+    }
+
+    @PostMapping("/login")
+    public LoginResponseDTO loginUser(@RequestBody RegistrationDTO body){
+        return authenticationService.loginUser(body.getUsername(), body.getPassword());
     }
 }
