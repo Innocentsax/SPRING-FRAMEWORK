@@ -34,7 +34,7 @@ Build a robust and secure backend for your application with **Spring Security 6*
 29) Logging inside Spring applications
 30) Properties Configuration inside Spring applications
 31) Profiles inside Spring Boot applications
-32) Conditional Bean creation using Profiles
+32) Conditional Bean creation using Profiles.
 33) Monitoring Spring Boot applications using SpringBoot Actuator & Spring Boot Admin
 34) Deploying SpringBoot App into cloud using AWS Elastic Beanstalk
 
