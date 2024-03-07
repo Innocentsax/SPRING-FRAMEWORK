@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/AuthenicatedBackend/AuthenicatedBackend/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Authentication System/Authentication-System/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Authentication_and_Authorization/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Google-Login/Google-Login/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Jwt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MVCSecuritySQ16/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Online-Food-Ordering/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/setUp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/setUp/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/setUp2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/setUp2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/setUp3/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/setUp3/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/setUp4/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/setUp4/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security-login-system-main/spring-security-login-system-main/AuthenticatedBackend/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/udoBank/udoBank/src/main/java" charset="UTF-8" />
+  </component>
+</project>

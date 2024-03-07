@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/setUp/pom.xml" />
+        <option value="$PROJECT_DIR$/setUp2/pom.xml" />
+        <option value="$PROJECT_DIR$/setUp3/pom.xml" />
+        <option value="$PROJECT_DIR$/setUp4/pom.xml" />
+        <option value="$PROJECT_DIR$/udoBank/udoBank/pom.xml" />
+        <option value="$PROJECT_DIR$/Google-Login/Google-Login/pom.xml" />
+        <option value="$PROJECT_DIR$/MVCSecuritySQ16/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_security/pom.xml" />
+        <option value="$PROJECT_DIR$/AuthenicatedBackend/AuthenicatedBackend/pom.xml" />
+        <option value="$PROJECT_DIR$/Online-Food-Ordering/pom.xml" />
+        <option value="$PROJECT_DIR$/Authentication System/Authentication-System/pom.xml" />
+        <option value="$PROJECT_DIR$/Authentication_and_Authorization/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security-login-system-main/spring-security-login-system-main/AuthenticatedBackend/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

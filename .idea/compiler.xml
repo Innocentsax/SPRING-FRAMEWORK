@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SecuritySquad16" />
+        <module name="AuthenticatedBackend" />
+        <module name="udoBank" />
+        <module name="Google-Login" />
+        <module name="spring_security" />
+        <module name="Jwt" />
+        <module name="Online-Food-Ordering" />
+        <module name="Authentication_and_Authorization" />
+        <module name="setUp3" />
+        <module name="setUp4" />
+        <module name="AuthenicatedBackend" />
+        <module name="setUp2" />
+        <module name="setUp" />
+        <module name="Authentication-System" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AuthenicatedBackend" options="-parameters" />
+      <module name="AuthenticatedBackend" options="-parameters" />
+      <module name="Authentication-System" options="-parameters" />
+      <module name="Authentication_and_Authorization" options="-parameters" />
+      <module name="Google-Login" options="-parameters" />
+      <module name="Jwt" options="-parameters" />
+      <module name="Online-Food-Ordering" options="-parameters" />
+      <module name="SecuritySquad16" options="-parameters" />
+      <module name="spring_security" options="-parameters" />
+      <module name="udoBank" options="-parameters" />
+    </option>
+  </component>
+</project>
