@@ -4,7 +4,7 @@ Build a robust and secure backend for your application with **Spring Security 6*
 
 ## Topics covered in the Repo
 1) What is Spring framework?
-2) Spring Vs Java EE
+2) Spring Vs Java EE.
 3) Evolution of Spring and release timeline of Spring
 4) Different projects inside Spring
 5) Spring Core Concepts like Inversion of Control (IoC), Dependency Injection (DI) & Aspect-Oriented Programming (AOP)
@@ -34,7 +34,7 @@ Build a robust and secure backend for your application with **Spring Security 6*
 29) Logging inside Spring applications
 30) Properties Configuration inside Spring applications
 31) Profiles inside Spring Boot applications
-32) Conditional Bean creation using Profiles
+32) Conditional Bean creation using Profiles.
 33) Monitoring Spring Boot applications using SpringBoot Actuator & Spring Boot Admin
 34) Deploying SpringBoot App into cloud using AWS Elastic Beanstalk
 
