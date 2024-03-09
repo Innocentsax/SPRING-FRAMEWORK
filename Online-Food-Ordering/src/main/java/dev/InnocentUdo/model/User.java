@@ -1,6 +1,7 @@
 package dev.InnocentUdo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.InnocentUdo.DTO.RestaurantDTO;
 import dev.InnocentUdo.enums.USER_ROLE;
 import jakarta.persistence.*;
@@ -21,6 +22,8 @@ public class User {
     private Long id;
     private String fullName;
     private String email;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
 
