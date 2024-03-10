@@ -25,6 +25,7 @@ public class Restaurant {
     private String description;
     private String cuisineType;
     private String openingHours;
+//    private String title;
 
     @OneToOne
     private Address address;
