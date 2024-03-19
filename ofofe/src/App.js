@@ -1,10 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Navbar from "./component/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="">CODE WITH INNOCENT</h1>
+    <div>
+      <Navbar />
     </div>
   );
 }
