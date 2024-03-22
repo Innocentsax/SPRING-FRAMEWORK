@@ -10,6 +10,7 @@ import {
 import React from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import MenuCard from "./MenuCard";
 
 const categories = ["Pizza", "Burger", "French Fries", "Pasta", "Salad"];
 const FoodTypes = [
@@ -18,6 +19,7 @@ const FoodTypes = [
   { label: "Non-vegetarian", value: "non-vegetarian" },
   { label: "Seasonal", value: "seasonal" },
 ];
+const menu = [1, 1, 1, 1, 1, 1];
 const RestaurantDetails = () => {
   const [foodType, setFoodType] = React.useState("All");
   const handleFilter = (e) => {
@@ -123,7 +125,11 @@ const RestaurantDetails = () => {
             </div>
           </div>
         </div>
-        <div className="space-y-5 lg:w-[80%] lg:pl-10">Menu</div>
+        <div className="space-y-5 lg:w-[80%] lg:pl-10">
+          {menu.map((item) => (
+            <MenuCard />
+          ))}
+        </div>
       </section>
     </div>
   );
