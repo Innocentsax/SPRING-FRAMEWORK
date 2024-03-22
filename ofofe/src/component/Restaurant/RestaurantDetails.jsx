@@ -1,9 +1,28 @@
-import { Grid } from "@mui/material";
+import {
+  Divider,
+  FormControl,
+  FormControlLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 
+const categories = ["Pizza", "Burger", "French Fries", "Pasta", "Salad"];
+const FoodTypes = [
+  { label: "All", value: "All" },
+  { label: "Vegetarian only", value: "Vegetarians" },
+  { label: "Non-vegetarian", value: "non-vegetarian" },
+  { label: "Seasonal", value: "seasonal" },
+];
 const RestaurantDetails = () => {
+  const [foodType, setFoodType] = React.useState("All");
+  const handleFilter = (e) => {
+    console.log(e.target.value, e.target.name);
+  };
   return (
     <div className="px-5 lg:px-20">
       <section>
@@ -50,6 +69,61 @@ const RestaurantDetails = () => {
             </p>
           </div>
         </div>
+      </section>
+      <Divider />
+      <section className="pt-[2rem] lg:flex relative">
+        <div className="space-y-10 lg:w-[20%] filter ">
+          <div className="box space-y-5 lg:sticky top-28">
+            <div>
+              <Typography variant="5" sx={{ paddingBottom: "1rem" }}>
+                Food Type
+              </Typography>
+              <div className="py-3 space-y-5" component={"fieldset"}>
+                <FormControl>
+                  <RadioGroup
+                    onChange={handleFilter}
+                    name="food_type"
+                    value={foodType}
+                  >
+                    {FoodTypes.map((item) => (
+                      <FormControlLabel
+                        key={item.value}
+                        value={item.value}
+                        control={<Radio />}
+                        label={item.label}
+                      />
+                    ))}
+                  </RadioGroup>
+                </FormControl>
+              </div>
+            </div>
+            <Divider />
+            <div>
+              <Typography variant="5" sx={{ paddingBottom: "1rem" }}>
+                Food Category
+              </Typography>
+              <div className="py-3 space-y-5">
+                <FormControl component={"fieldset"}>
+                  <RadioGroup
+                    onChange={handleFilter}
+                    name="food_type"
+                    value={foodType}
+                  >
+                    {categories.map((item) => (
+                      <FormControlLabel
+                        key={item}
+                        value={item}
+                        control={<Radio />}
+                        label={item}
+                      />
+                    ))}
+                  </RadioGroup>
+                </FormControl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="space-y-5 lg:w-[80%] lg:pl-10">Menu</div>
       </section>
     </div>
   );
