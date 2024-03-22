@@ -11,7 +11,7 @@ const RestaurantCard = () => {
       >
         <img
           className="w-full h-[10rem] rounded-t-md object-cover"
-          src="https://images.pexels.com/photos/1579739/pexels-photo-1579739.jpeg?auto=compress&cs=tinysrgb&w=800"
+          src="https://images.pexels.com/photos/460537/pexels-photo-460537.jpeg?auto=compress&cs=tinysrgb&w=800"
           alt=""
         />
         <Chip
