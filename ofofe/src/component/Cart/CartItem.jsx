@@ -31,6 +31,7 @@ const CartItem = () => {
               </div>
             </div>
           </div>
+          <p>₦1,000</p>
         </div>
       </div>
     </div>
