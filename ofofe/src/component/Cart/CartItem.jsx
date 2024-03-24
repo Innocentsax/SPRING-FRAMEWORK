@@ -1,7 +1,7 @@
 import React from "react";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import { IconButton } from "@mui/material";
+import { Chip, IconButton } from "@mui/material";
 
 const CartItem = () => {
   return (
@@ -9,7 +9,7 @@ const CartItem = () => {
       <div className="lg:flex items-center lg:space-x-5">
         <div>
           <img
-            className="w-[5rem] h-[5rem] object-cover"
+            className="px-5 w-[8rem] h-[5rem] object-cover"
             src="https://cdn.pixabay.com/photo/2018/01/22/16/28/pancake-3099315_1280.jpg"
             alt=""
           />
@@ -33,6 +33,11 @@ const CartItem = () => {
           </div>
           <p>₦1,000</p>
         </div>
+      </div>
+      <div className="pt-3 space-x-2 px-5">
+        {[1, 1, 1].map((item) => (
+          <Chip label={"bread"} />
+        ))}
       </div>
     </div>
   );
