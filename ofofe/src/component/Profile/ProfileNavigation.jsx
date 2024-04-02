@@ -13,11 +13,11 @@ import { useNavigate } from "react-router-dom";
 
 const menu = [
   { title: "Orders", icon: <ShoppingBagIcon /> },
-  { title: "Favorite", icon: <FavoriteIcon /> },
+  { title: "Favorites", icon: <FavoriteIcon /> },
   { title: "Address", icon: <AddReaction /> },
   { title: "Payment", icon: <AccountBalanceWalletIcon /> },
-  { title: "Notification", icon: <NotificationsActiveIcon /> },
-  { title: "Event", icon: <EventIcon /> },
+  { title: "Notifications", icon: <NotificationsActiveIcon /> },
+  { title: "Events", icon: <EventIcon /> },
   { title: "Logout", icon: <LogoutIcon /> },
 ];
 const ProfileNavigation = ({ open, handleClose }) => {
