@@ -5,8 +5,11 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Navbar.css";
 import { Box } from "@mui/system";
 import zIndex from "@mui/material/styles/zIndex";
+import { Person } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{ zIndex: 100 }}
@@ -26,7 +29,13 @@ const Navbar = () => {
           </IconButton>
         </div>
         <div className="">
-          <Avatar sx={{ bgcolor: "white" }}>C</Avatar>
+          {false ? (
+            <Avatar sx={{ bgcolor: "white" }}>C</Avatar>
+          ) : (
+            <IconButton onClick={() => navigate("/account/login")}>
+              <Person />
+            </IconButton>
+          )}
         </div>
         <div className="">
           <IconButton>
