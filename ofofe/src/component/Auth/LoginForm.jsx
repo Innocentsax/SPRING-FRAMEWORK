@@ -19,8 +19,8 @@ const LoginForm = () => {
         <Form>
           <Field
             as={TextField}
-            name="email"
-            label="email"
+            name="Email"
+            label="Email"
             fullWidth
             variant="outlined"
             margin="normal"
@@ -28,8 +28,8 @@ const LoginForm = () => {
 
           <Field
             as={TextField}
-            name="password"
-            label="password"
+            name="Password"
+            label="Password"
             fullWidth
             variant="outlined"
             margin="normal"
