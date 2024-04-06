@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import { Field, Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from "../State/Authentication/Action";
+import { useDispatch } from "react-redux";
 
 const initialValue = {
   fullName: "",
@@ -21,8 +23,10 @@ const initialValue = {
 const RegisterForm = () => {
   const handleSubmit = (values) => {
     console.log(values);
+    dispatch(registerUser({ userData: values, navigate }));
   };
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div>
       <Typography className="text-center" variant="h5">

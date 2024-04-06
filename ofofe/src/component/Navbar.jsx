@@ -4,12 +4,21 @@ import { Avatar, Badge, IconButton } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Navbar.css";
 import { Box } from "@mui/system";
-import zIndex from "@mui/material/styles/zIndex";
 import { Person } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { pink } from "@mui/material/colors";
 
 const Navbar = () => {
+  const { auth } = useSelector((store) => store);
   const navigate = useNavigate();
+  const handleAvatarClick = () => {
+    if (auth.user?.role === "ROLE_CUSTOMER") {
+      navigate("/my-profile");
+    } else {
+      navigate("/admin/restaurant");
+    }
+  };
   return (
     <Box
       sx={{ zIndex: 100 }}
@@ -17,7 +26,10 @@ const Navbar = () => {
     >
       <div className="flex items-center space-x-4">
         <div className="lg:mr-10 cursor-pointer flex items-center space-x-4">
-          <li className="logo font-semibold text-grey-300 text-2xl">
+          <li
+            onClick={() => navigate("/")}
+            className="logo font-semibold text-grey-300 text-2xl"
+          >
             CALABAR KITCHEN
           </li>
         </div>
@@ -29,8 +41,13 @@ const Navbar = () => {
           </IconButton>
         </div>
         <div className="">
-          {false ? (
-            <Avatar sx={{ bgcolor: "white" }}>C</Avatar>
+          {auth.user ? (
+            <Avatar
+              onClick={handleAvatarClick}
+              sx={{ bgcolor: "white", color: pink[400] }}
+            >
+              {auth.user?.fullName[0].toUpperCase()}
+            </Avatar>
           ) : (
             <IconButton onClick={() => navigate("/account/login")}>
               <Person />
