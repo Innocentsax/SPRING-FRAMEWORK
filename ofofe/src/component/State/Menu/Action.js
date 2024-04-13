@@ -3,6 +3,9 @@ import {
   CREATE_MENU_ITEM_FAILURE,
   CREATE_MENU_ITEM_REQUEST,
   CREATE_MENU_ITEM_SUCCESS,
+  DELETE_MENU_ITEM_FAILURE,
+  DELETE_MENU_ITEM_REQUEST,
+  DELETE_MENU_ITEM_SUCCESS,
   GET_MENU_ITEMS_BY_RESTAURANT_ID_FAILURE,
   GET_MENU_ITEMS_BY_RESTAURANT_ID_REQUEST,
   GET_MENU_ITEMS_BY_RESTAURANT_ID_SUCCESS,
@@ -96,6 +99,25 @@ export const updateMenuItemsAvailability = ({ foodId, jwt }) => {
         type: UPDATE_MENU_ITEMS_AVAILABILITY_FAILURE,
         payload: error,
       });
+    }
+  };
+};
+
+export const deleteFoodAction = ({ foodId, jwt }) => {
+  return async (dispatch) => {
+    dispatch({ type: DELETE_MENU_ITEM_REQUEST });
+    try {
+      const { data } = await axios.delete(
+        `${API_URL}/api/admin/food/${foodId}`,
+        {
+          headers: { Authorization: `Bearer ${jwt}` },
+        }
+      );
+      console.log("Delete food ", data);
+      dispatch({ type: DELETE_MENU_ITEM_SUCCESS, payload: foodId });
+    } catch (error) {
+      console.log("error", error);
+      dispatch({ type: DELETE_MENU_ITEM_FAILURE, payload: error });
     }
   };
 };
