@@ -1,4 +1,4 @@
-import * as actionTypes from "./ActionType";
+import * as actionTypes from "./ActionTypes";
 
 const initialState = {
   menuItems: [],
@@ -33,7 +33,7 @@ const menuItemsReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         menuItems: state.menuItems.filter(
-          (menuItem) => menuItem.id !== actionTypes.payload
+          (menuItem) => menuItem.id !== action.payload
         ),
         message: "You have successfully deleted",
       };
