@@ -1,5 +1,5 @@
-import { GET_USER_SUCCESS } from "../Authentication/ActionType";
 import {
+  GET_USERS_ORDERS_FAILURE,
   GET_USERS_ORDERS_REQUEST,
   GET_USERS_ORDERS_SUCCESS,
 } from "./ActionTypes";
