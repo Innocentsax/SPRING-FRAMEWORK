@@ -15,7 +15,7 @@ import {
   UPDATE_MENU_ITEMS_AVAILABILITY_FAILURE,
   UPDATE_MENU_ITEMS_AVAILABILITY_REQUEST,
   UPDATE_MENU_ITEMS_AVAILABILITY_SUCCESS,
-} from "./ActionType";
+} from "./ActionTypes";
 import axios from "axios";
 
 export const createMenuItem = ({ menu, jwt }) => {
