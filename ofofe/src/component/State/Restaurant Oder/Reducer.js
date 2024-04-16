@@ -7,6 +7,11 @@ import {
   UPDATE_ORDER_STATUS_SUCCESS,
 } from "./ActionTypes";
 
+const initialState = {
+  loading: false,
+  error: null,
+  orders: [],
+};
 const restaurantsOrderReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_RESTAURANTS_ORDER_REQUEST:
