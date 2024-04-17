@@ -51,6 +51,7 @@ export const authReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         user: action.payload,
+        favorites: action.payload.favorites,
       };
 
     case ADD_TO_FAVORITE_SUCCESS:
