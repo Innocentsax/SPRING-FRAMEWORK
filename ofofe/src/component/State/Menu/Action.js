@@ -1,4 +1,4 @@
-import { API_URL } from "../../Config/api";
+import { api } from "../../Config/api";
 import {
   CREATE_MENU_ITEM_FAILURE,
   CREATE_MENU_ITEM_REQUEST,
@@ -16,13 +16,12 @@ import {
   UPDATE_MENU_ITEMS_AVAILABILITY_REQUEST,
   UPDATE_MENU_ITEMS_AVAILABILITY_SUCCESS,
 } from "./ActionTypes";
-import axios from "axios";
 
 export const createMenuItem = ({ menu, jwt }) => {
   return async (dispatch) => {
     dispatch({ type: CREATE_MENU_ITEM_REQUEST });
     try {
-      const { data } = await axios.post(`${API_URL}/api/admin/food`, menu, {
+      const { data } = await api.post(`/api/admin/food`, menu, {
         headers: { Authorization: `Bearer ${jwt}` },
       });
       console.log("created menu ", data);
@@ -38,9 +37,9 @@ export const getMenuItemsByRestaurantId = (reqData) => {
   return async (dispatch) => {
     dispatch({ type: GET_MENU_ITEMS_BY_RESTAURANT_ID_REQUEST });
     try {
-      const { data } = await axios.get(
-        `${API_URL}/api/food/restaurant/${reqData}?vegetarian=${reqData.vegetarian}
-        &nonveg=${reqData.nonveg}&seasonal=${reqData.seasonal}&food_category=
+      const { data } = await api.get(
+        `/api/food/restaurant/${reqData.restaurantId}?vegetarian=${reqData.vegetarian}
+        &nonVegetarian=${reqData.nonVegetarian}&seasonal=${reqData.seasonal}&food_category=
         ${reqData.foodCategory}`,
         {
           headers: { Authorization: `Bearer ${reqData.jwt}` },
@@ -65,12 +64,9 @@ export const searchMenuItem = ({ keyword, jwt }) => {
   return async (dispatch) => {
     dispatch({ type: SEARCH_MENU_ITEM_REQUEST });
     try {
-      const { data } = await axios.get(
-        `${API_URL}/api/food/search?name=${keyword}`,
-        {
-          headers: { Authorization: `Bearer ${jwt}` },
-        }
-      );
+      const { data } = await api.get(`/api/food/search?name=${keyword}`, {
+        headers: { Authorization: `Bearer ${jwt}` },
+      });
       console.log("data ------ ", data);
       dispatch({ type: SEARCH_MENU_ITEM_SUCCESS, payload: data });
     } catch (error) {
@@ -84,8 +80,8 @@ export const updateMenuItemsAvailability = ({ foodId, jwt }) => {
   return async (dispatch) => {
     dispatch({ type: UPDATE_MENU_ITEMS_AVAILABILITY_REQUEST });
     try {
-      const { data } = await axios.put(
-        `${API_URL}/api/admin/food/${foodId}`,
+      const { data } = await api.put(
+        `/api/admin/food/${foodId}`,
         {},
         {
           headers: { Authorization: `Bearer ${jwt}` },
@@ -107,12 +103,9 @@ export const deleteFoodAction = ({ foodId, jwt }) => {
   return async (dispatch) => {
     dispatch({ type: DELETE_MENU_ITEM_REQUEST });
     try {
-      const { data } = await axios.delete(
-        `${API_URL}/api/admin/food/${foodId}`,
-        {
-          headers: { Authorization: `Bearer ${jwt}` },
-        }
-      );
+      const { data } = await api.delete(`/api/admin/food/${foodId}`, {
+        headers: { Authorization: `Bearer ${jwt}` },
+      });
       console.log("Delete food ", data);
       dispatch({ type: DELETE_MENU_ITEM_SUCCESS, payload: foodId });
     } catch (error) {
