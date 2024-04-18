@@ -34,7 +34,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> findCategoryByRestaurantId(Long id) throws Exception {
         Restaurant restaurant = restaurantService.getRestaurantByUserId(id);
-        return categoryRepository.findByRestaurantId(restaurant.getId());
+        return categoryRepository.findByRestaurantId(id);
     }
 
     @Override
