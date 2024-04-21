@@ -33,6 +33,7 @@ public class Restaurant {
     @Embedded
     private ContactInformation contactinformation;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orders = new ArrayList<>();
 
