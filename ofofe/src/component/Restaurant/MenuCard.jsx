@@ -5,9 +5,12 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { Button, Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import { categorizeIngredients } from "../State/Utils/categorizeIngredients";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../State/Cart/Action";
 
 const MenuCard = ({ item }) => {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
+  const dispatch = useDispatch();
   const handleCheckBoxChange = (itemName) => {
     console.log(itemName);
     if (selectedIngredients.includes(itemName)) {
@@ -24,11 +27,12 @@ const MenuCard = ({ item }) => {
     const reqData = {
       token: localStorage.getItem("jwt"),
       cartItem: {
-        menuItemId: item.id,
+        foodId: item.id,
         quantity: 1,
         ingredients: selectedIngredients,
       },
     };
+    dispatch(addItemToCart(reqData));
     console.log("reqData", reqData);
   };
 
