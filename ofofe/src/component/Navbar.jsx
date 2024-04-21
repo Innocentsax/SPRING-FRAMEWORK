@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import { pink } from "@mui/material/colors";
 
 const Navbar = () => {
-  const { auth } = useSelector((store) => store);
+  const { auth, cart } = useSelector((store) => store);
   const navigate = useNavigate();
   const handleAvatarClick = () => {
     if (auth.user?.role === "ROLE_CUSTOMER") {
@@ -55,8 +55,8 @@ const Navbar = () => {
           )}
         </div>
         <div className="">
-          <IconButton>
-            <Badge color="blue" badgeContent={3}>
+          <IconButton onClick={() => navigate("/cart")}>
+            <Badge color="blue" badgeContent={cart.cart?.item.length}>
               <ShoppingCartIcon sx={{ fontSize: "1.5rem" }} />
             </Badge>
           </IconButton>
