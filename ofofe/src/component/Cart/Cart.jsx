@@ -14,6 +14,7 @@ import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
+import { createOrder } from "../State/Order/Action";
 
 export const style = {
   position: "absolute",
@@ -63,6 +64,7 @@ const Cart = () => {
         },
       },
     };
+    dispatch(createOrder(data));
     console.log("form value ", value);
   };
   return (
@@ -78,7 +80,7 @@ const Cart = () => {
             <div className="space-y-3">
               <div className="flex justify-between text text-grey-400">
                 <p>Item Total</p>
-                <p>₦{cart.cart.total}</p>
+                <p>₦{cart.cart?.total}</p>
               </div>
               <div className="flex justify-between text text-grey-400">
                 <p>Delivery fee</p>
@@ -86,13 +88,13 @@ const Cart = () => {
               </div>
               <div className="flex justify-between text text-grey-400">
                 <p>GST and Restaurant Charges</p>
-                <p>₦200</p>
+                <p>₦21</p>
               </div>
               <Divider />
             </div>
             <div className="flex justify-between text-gray-400">
               <p>Total pay</p>
-              <p>₦{cart.cart.total + 33 + 21}</p>
+              <p>₦{cart.cart?.total + 33 + 21}</p>
             </div>
           </div>
         </section>
