@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/auths")
 @RequiredArgsConstructor
 public class AuthController {
     private final UserRepository userRepository;
