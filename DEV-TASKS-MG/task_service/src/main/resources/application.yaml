@@ -1,0 +1,15 @@
+server:
+  port: 5002
+
+spring:
+  application:
+    name: TASK-SERVICE
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    password: Bn19c0248@
+    username: root
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/task_service
+    driver-class-name: com.mysql.cj.jdbc.Driver
